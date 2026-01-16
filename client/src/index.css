@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+html {
+    /* 1. Makes the scroll animation smooth */
+    scroll-behavior: smooth;
+    
+    /* 2. Fixes the "top hiding" issue. 
+       Change '100px' to match the height of your fixed Navbar */
+    scroll-padding-top: 70px; 
+  }
