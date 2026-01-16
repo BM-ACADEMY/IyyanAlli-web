@@ -20,7 +20,7 @@ const ContactSectionV2 = () => {
     if (name === 'phone') {
       // Remove any non-number characters
       const numericValue = value.replace(/[^0-9]/g, '');
-      
+
       // Only update if length is <= 10
       if (numericValue.length <= 10) {
         setFormData({ ...formData, [name]: numericValue });
@@ -51,33 +51,33 @@ const ContactSectionV2 = () => {
   `;
   const labelClass = (fieldName) => `
     absolute left-0 transition-all duration-300 pointer-events-none uppercase text-xs font-bold tracking-widest
-    ${focusedField === fieldName || formData[fieldName] 
-      ? '-top-2 text-[#bf9b30] text-[10px]' 
+    ${focusedField === fieldName || formData[fieldName]
+      ? '-top-2 text-[#bf9b30] text-[10px]'
       : 'top-4 text-gray-500'}
   `;
 
   return (
     <section className="min-h-screen bg-[#292929] py-24 px-4 font-sans selection:bg-[#bf9b30] selection:text-[#292929] relative overflow-hidden flex items-center" id='contact'>
-      
+
       {/* --- BACKGROUND GRID PATTERN --- */}
-      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none" 
-           style={{ backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
+      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none"
+        style={{ backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
       </div>
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-          
+
           {/* --- LEFT SIDE: THE EDITORIAL FORM --- */}
           <div className="lg:col-span-7">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12"
             >
               <h2 className="text-5xl lg:text-7xl font-thin text-white tracking-tighter mb-4">
-                Let's <span className="italic font-serif text-[#bf9b30]">Collaborate</span>
+                Let's <span className="italic font-serif text-[#bf9b30]">Connect With Us</span>
               </h2>
               <p className="text-gray-400 font-light text-lg max-w-lg">
                 Tell us about your project or inquiry. We are ready to build the future with you.
@@ -85,13 +85,13 @@ const ContactSectionV2 = () => {
             </motion.div>
 
             <form onSubmit={handleSubmit} className="space-y-8">
-              
+
               {/* Row 1: Name & Email */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Name */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }} 
-                  whileInView={{ opacity: 1, y: 0 }} 
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
                   className={inputContainerClass}
                 >
@@ -109,9 +109,9 @@ const ContactSectionV2 = () => {
                 </motion.div>
 
                 {/* Email */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }} 
-                  whileInView={{ opacity: 1, y: 0 }} 
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                   className={inputContainerClass}
                 >
@@ -130,9 +130,9 @@ const ContactSectionV2 = () => {
               </div>
 
               {/* Row 2: Phone Number (Full Width) */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
                 className={inputContainerClass}
               >
@@ -146,15 +146,15 @@ const ContactSectionV2 = () => {
                   className={inputClass('phone')}
                   required
                   maxLength={10} // Enforce max length in HTML
-                  placeholder="" 
+                  placeholder=""
                 />
                 <label className={labelClass('phone')}>Phone Number (10 Digits)</label>
               </motion.div>
 
               {/* Row 3: Message */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
                 className={`${inputContainerClass} pt-4`}
               >
@@ -172,7 +172,7 @@ const ContactSectionV2 = () => {
               </motion.div>
 
               {/* Unique Submit Button */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
@@ -184,9 +184,9 @@ const ContactSectionV2 = () => {
                 >
                   <div className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 border border-white/20 group-hover:bg-[#bf9b30] group-hover:border-[#bf9b30]
                     ${isSubmitted ? 'bg-green-500 border-green-500' : ''}`}>
-                    {isSubmitting ? <Loader2 className="animate-spin text-white" /> : 
-                     isSubmitted ? <Check className="text-white" /> :
-                     <ArrowRight className="text-white group-hover:translate-x-1 transition-transform" />
+                    {isSubmitting ? <Loader2 className="animate-spin text-white" /> :
+                      isSubmitted ? <Check className="text-white" /> :
+                        <ArrowRight className="text-white group-hover:translate-x-1 transition-transform" />
                     }
                   </div>
                   <span className="text-lg font-light tracking-widest uppercase group-hover:text-[#bf9b30] transition-colors">
@@ -200,7 +200,7 @@ const ContactSectionV2 = () => {
 
 
           {/* --- RIGHT SIDE: GLASS INFO CARD --- */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -208,53 +208,56 @@ const ContactSectionV2 = () => {
             className="lg:col-span-5 w-full mt-12 lg:mt-0"
           >
             <div className="bg-white/5 backdrop-blur-md border border-white/10 p-10 lg:p-12 rounded-sm relative overflow-hidden shadow-2xl">
-               {/* Decorative Gold Bar */}
-               <div className="absolute top-0 left-0 w-full h-1 bg-[#bf9b30]"></div>
-               
-               <h3 className="text-2xl font-light text-white mb-8">Contact Information</h3>
-               
-               <div className="space-y-10">
-                 {/* Item 1 */}
-                 <div className="flex gap-6 items-start">
-                    <div className="p-3 border border-white/10 rounded-full text-[#bf9b30] bg-[#292929] shadow-lg">
-                      <Phone size={20} />
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Call Us Directly</p>
-                      <a href="tel:9944355114" className="block text-lg text-white font-light hover:text-[#bf9b30] transition-colors">9944355114</a>
-                      <a href="tel:8667233235" className="block text-lg text-white font-light hover:text-[#bf9b30] transition-colors">8667233235</a>
-                    </div>
-                 </div>
+              {/* Decorative Gold Bar */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-[#bf9b30]"></div>
 
-                 {/* Item 2 */}
-                 <div className="flex gap-6 items-start">
-                    <div className="p-3 border border-white/10 rounded-full text-[#bf9b30] bg-[#292929] shadow-lg">
-                      <Mail size={20} />
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Email Inquiries</p>
-                      <a href="mailto:nandha@huntsworld.com" className="block text-lg text-white font-light hover:text-[#bf9b30] transition-colors">nandha@huntsworld.com</a>
-                    </div>
-                 </div>
+              <h3 className="text-2xl font-light text-white mb-8">Contact Information</h3>
 
-                 {/* Item 3 */}
-                 <div className="flex gap-6 items-start">
-                    <div className="p-3 border border-white/10 rounded-full text-[#bf9b30] bg-[#292929] shadow-lg">
-                      <MapPin size={20} />
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Headquarters</p>
-                      <p className="text-lg text-white font-light">Pondicherry, India</p>
-                    </div>
-                 </div>
-               </div>
+              <div className="space-y-10">
+                {/* Item 1 */}
+                <div className="flex gap-6 items-start">
+                  <div className="p-3 border border-white/10 rounded-full text-[#bf9b30] bg-[#292929] shadow-lg">
+                    <Phone size={20} />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Call Us Directly</p>
+                    <a href="tel:9944355114" className="block text-lg text-white font-light hover:text-[#bf9b30] transition-colors">9944355114</a>
+                    <a href="tel:8667233235" className="block text-lg text-white font-light hover:text-[#bf9b30] transition-colors">8667233235</a>
+                  </div>
+                </div>
 
-               {/* Bottom Note */}
-               <div className="mt-12 pt-8 border-t border-white/10">
-                  <p className="text-sm text-gray-400 font-light italic">
-                    "Bridging traditional industries with digital opportunities."
-                  </p>
-               </div>
+                {/* Item 2 */}
+                <div className="flex gap-6 items-start">
+                  <div className="p-3 border border-white/10 rounded-full text-[#bf9b30] bg-[#292929] shadow-lg">
+                    <Mail size={20} />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Email Inquiries</p>
+                    <a href="mailto:nandha@huntsworld.com" className="block text-lg text-white font-light hover:text-[#bf9b30] transition-colors">nandha@huntsworld.com</a>
+                  </div>
+                </div>
+
+                {/* Item 3 */}
+                <div className="flex gap-6 items-start">
+                  <div className="p-3 border border-white/10 rounded-full text-[#bf9b30] bg-[#292929] shadow-lg">
+                    <MapPin size={20} />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Headquarters</p>
+                    <p className="text-lg text-white font-light">Arasi soap works,
+                      2,East coast road,
+                      Bahour,
+                      Kattukuppam,Puducherry-607402</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Note */}
+              <div className="mt-12 pt-8 border-t border-white/10">
+                <p className="text-sm text-gray-400 font-light italic">
+                  "Bridging traditional industries with digital opportunities."
+                </p>
+              </div>
             </div>
           </motion.div>
 

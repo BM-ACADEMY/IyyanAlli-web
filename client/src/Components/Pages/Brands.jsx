@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Phone, 
-  Mail, 
-  User, 
+import {
+  Phone,
+  Mail,
+  User,
   GraduationCap,
   ExternalLink
 } from 'lucide-react';
@@ -15,11 +15,12 @@ import Logo4 from "@/assets/brands/nk.jpeg"
 import Logo5 from "@/assets/brands/hw2.jpeg"
 
 const IyyanAlliPortfolioV6 = () => {
-  
+
   const companies = [
     {
       id: 1,
       name: "Thirukumaran Real Consultancy",
+      meta: "Since 1999",
       role: "Founder: R. Lakshminarayanan",
       details: ["21+ Landmark Projects Completed"],
       contacts: [
@@ -27,7 +28,7 @@ const IyyanAlliPortfolioV6 = () => {
         { type: "email", value: "thirukumaran.realestate@gmail.com" }
       ],
       // Placeholder image - replace with actual logo
-      logo: Logo1, 
+      logo: Logo1,
     },
     {
       id: 2,
@@ -44,8 +45,9 @@ const IyyanAlliPortfolioV6 = () => {
     },
     {
       id: 3,
-      name: "Huntsworld Properties",
+      name: "Huntsworld Properties and Promoters",
       role: "Promoters",
+      meta: "Since 2024",
       details: ["Dynamic Property Listing Platform"],
       website: "www.huntsworldproperties.com",
       contacts: [
@@ -57,6 +59,7 @@ const IyyanAlliPortfolioV6 = () => {
     {
       id: 4,
       name: "NK Chemicals",
+      meta: "Since 2023",
       role: "Chemical Dealer",
       details: ["Industrial & Commercial Supply"],
       contacts: [
@@ -67,6 +70,7 @@ const IyyanAlliPortfolioV6 = () => {
     {
       id: 5,
       name: "Huntsworld (B2B)",
+      meta: "Comming Soon",
       role: "Business Listing Ecosystem",
       details: ["B2B Connections", "Monetization Features"],
       contacts: [
@@ -81,7 +85,7 @@ const IyyanAlliPortfolioV6 = () => {
 
   return (
     <section className="min-h-screen bg-[#292929] py-20 px-4 overflow-hidden relative font-sans selection:bg-[#bf9b30] selection:text-[#292929]" id='brands'>
-      
+
       {/* Background Ambience */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[10%] left-[20%] w-96 h-96 bg-[#bf9b30] rounded-full mix-blend-overlay filter blur-[120px] opacity-10"></div>
@@ -90,21 +94,21 @@ const IyyanAlliPortfolioV6 = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
 
-         {/* --- SECTION DIVIDER: OUR BRANDS --- */}
-        <motion.div 
-           initial={{ opacity: 0 }}
-           whileInView={{ opacity: 1 }}
-           viewport={{ once: true }}
-           className="relative flex items-center justify-center mb-24"
+        {/* --- SECTION DIVIDER: OUR BRANDS --- */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="relative flex items-center justify-center mb-24"
         >
           <div className="absolute w-full max-w-2xl h-[1px] bg-gradient-to-r from-transparent via-[#bf9b30]/40 to-transparent"></div>
           <div className="relative bg-[#292929] px-6">
-             <span className="text-[#bf9b30] text-sm font-bold tracking-[0.4em] uppercase">Our Brands</span>
+            <span className="text-[#bf9b30] text-sm font-bold tracking-[0.4em] uppercase">Our Brands</span>
           </div>
         </motion.div>
 
         {/* --- HEADER DESIGN --- */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -119,8 +123,11 @@ const IyyanAlliPortfolioV6 = () => {
           {/* Name & Title */}
           <div className="space-y-4">
             <h1 className="text-5xl lg:text-7xl font-thin text-white tracking-tight">
-              Nandha <span className="text-[#bf9b30] font-normal">Kumaran</span>
+              L. Nandha <span className="text-[#bf9b30] font-normal">Kumaran  </span>
             </h1>
+            <h2 className='text-4xl text-white '>
+              Founder <span className='text-[#bf9b30]'>& CEO</span>
+            </h2>
             <p className="text-sm lg:text-base font-light text-gray-400 uppercase tracking-[0.3em]">
               S/O R. Lakshminarayanan
             </p>
@@ -128,11 +135,11 @@ const IyyanAlliPortfolioV6 = () => {
 
           {/* Details Row (Education & Contacts) */}
           <div className="flex flex-wrap justify-center items-center gap-4 lg:gap-8 mt-4">
-            
+
             {/* Education Tag */}
             <div className="flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 bg-white/5 text-gray-300 text-xs font-semibold tracking-wider">
-               <GraduationCap size={14} className="text-[#bf9b30]" /> 
-               <span>BSC.IT, MCA</span>
+              <GraduationCap size={14} className="text-[#bf9b30]" />
+              <span>BSC.IT, MCA</span>
             </div>
 
             {/* Phone Links */}
@@ -148,11 +155,11 @@ const IyyanAlliPortfolioV6 = () => {
           </div>
         </motion.div>
 
-        
+
 
         {/* --- TIMELINE --- */}
         <div className="relative">
-          
+
           {/* Vertical Center Line */}
           <div className="absolute left-6 lg:left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-[#bf9b30]/50 to-transparent transform -translate-x-1/2"></div>
 
@@ -161,7 +168,7 @@ const IyyanAlliPortfolioV6 = () => {
               const isEven = index % 2 === 0;
 
               return (
-                <motion.div 
+                <motion.div
                   key={company.id}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -169,15 +176,15 @@ const IyyanAlliPortfolioV6 = () => {
                   viewport={{ once: true, margin: "-100px" }}
                   className={`relative flex flex-col lg:flex-row items-center w-full ${isEven ? 'lg:flex-row-reverse' : ''}`}
                 >
-                  
+
                   {/* CENTRAL DOT */}
                   <div className="absolute left-6 lg:left-1/2 flex items-center justify-center transform -translate-x-1/2 z-20">
                     <div className="w-3 h-3 bg-[#bf9b30] rounded-full shadow-[0_0_15px_#bf9b30]"></div>
                   </div>
 
                   {/* HORIZONTAL CONNECTOR LINE (Desktop Only) */}
-                  <div className={`hidden lg:block absolute top-1/2 w-16 h-[1px] bg-[#bf9b30]/50 
-                    ${isEven ? 'right-1/2 origin-right' : 'left-1/2 origin-left'}`} 
+                  <div className={`hidden lg:block absolute top-1/2 w-16 h-[1px] bg-[#bf9b30]/50
+                    ${isEven ? 'right-1/2 origin-right' : 'left-1/2 origin-left'}`}
                   />
 
                   {/* Spacer for Layout (50% width) */}
@@ -185,77 +192,80 @@ const IyyanAlliPortfolioV6 = () => {
 
                   {/* CONTENT CARD */}
                   <div className={`w-full lg:w-1/2 pl-16 lg:pl-0 ${isEven ? 'lg:pr-16' : 'lg:pl-16'}`}>
-                    <motion.div 
+                    <motion.div
                       whileHover={{ y: -5 }}
-                      className="group relative bg-[#2e2e2e] border border-white/10 p-8 rounded-sm hover:border-[#bf9b30]/40 transition-all duration-500 overflow-hidden shadow-lg"
+                      className="group relative bg-[#323030] border border-white/10 p-8 rounded-sm hover:border-[#bf9b30]/40 transition-all duration-500 overflow-hidden shadow-lg"
                     >
-                      {/* --- FADED BACKGROUND IMAGE (RIGHT SIDE) --- */}
-                      <div className="absolute right-0 top-0 w-3/5 h-full z-0 overflow-hidden pointer-events-none">
-                         {/* Gradient Mask to fade image into background color */}
-                         <div className="absolute inset-0 bg-gradient-to-r from-[#2e2e2e] via-[#2e2e2e]/60 to-transparent z-10" />
-                         <img 
-                            src={company.logo} 
-                            alt="Brand Background" 
-                            className="w-full h-full object-cover opacity-60 object-right transition-all duration-700 ease-in-out transform group-hover:scale-105"
-                         />
+                      {/* --- BACKGROUND IMAGE & OVERLAY --- */}
+                      <div className="absolute inset-0 z-0 h-full w-full">
+                        <img
+                          src={company.logo}
+                          alt="Brand Background"
+                          className="h-full w-full object-cover object-right opacity-100 transition-opacity duration-700"
+                        />
+
+                        {/* UPDATED GRADIENT:
+         - from-[#323030]: Solid color on the far left (Maximum readability)
+         - via-[#323030]/80: 80% opacity in the middle (Less see-through than before)
+         - to-transparent: Shows the image clearly on the far right
+      */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#323030] via-[#323030]/80 to-transparent z-10" />
                       </div>
 
-                      {/* --- CONTENT (Relative z-10 to stay on top of image) --- */}
-                      <div className="relative z-10">
+                      {/* --- CONTENT --- */}
+                      <div className="relative z-20 max-w-[85%]">
                         <div className="flex justify-between items-start mb-6">
                           <div>
-                            <h3 className="text-xl lg:text-2xl font-light text-white tracking-wide group-hover:text-[#bf9b30] transition-colors relative">
+                            <h3 className="text-xl lg:text-2xl font-light text-white tracking-wide group-hover:text-[#bf9b30] transition-colors relative drop-shadow-md">
                               {company.name}
                             </h3>
-                            <div className="h-[1px] w-12 bg-[#bf9b30] mt-3 mb-3"></div>
+                            <div className="h-[1px] w-12 bg-[#bf9b30] mt-3 mb-3 shadow-sm"></div>
                           </div>
                         </div>
 
                         <div className="space-y-4">
                           <div className="flex flex-col gap-1">
-                            <p className="text-sm font-medium text-gray-200">
+                            <p className="text-sm font-medium text-gray-100 drop-shadow-md">
                               {company.role}
                             </p>
-                            {company.meta && <p className="text-xs text-gray-400 uppercase tracking-widest">{company.meta}</p>}
+                            {company.meta && <p className="text-xs text-gray-300 uppercase tracking-widest drop-shadow-md">{company.meta}</p>}
                           </div>
 
                           <ul className="space-y-2">
                             {company.details.map((detail, i) => (
-                              <li key={i} className="text-sm text-gray-300 font-light flex items-start gap-2">
-                                <span className="mt-1.5 w-1 h-1 bg-[#bf9b30] rounded-full shrink-0"></span>
+                              <li key={i} className="text-sm text-gray-200 font-light flex items-start gap-2">
+                                <span className="mt-1.5 w-1 h-1 bg-[#bf9b30] rounded-full shrink-0 shadow-sm"></span>
                                 <span className="leading-relaxed drop-shadow-md">{detail}</span>
                               </li>
                             ))}
                           </ul>
 
                           {/* Link / Contact Area */}
-                          <div className="pt-6 mt-2 border-t border-white/10 flex flex-wrap gap-x-6 gap-y-3">
-                            {/* Website Link */}
+                          <div className="pt-6 mt-2 border-t border-white/20 flex flex-wrap gap-x-6 gap-y-3">
                             {company.website && (
-                              <a 
-                                href={`https://${company.website}`} 
+                              <a
+                                href={`https://${company.website}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-xs text-[#bf9b30] hover:text-white transition-colors group/link cursor-pointer"
+                                className="flex items-center gap-2 text-xs text-[#bf9b30] hover:text-white transition-colors group/link cursor-pointer drop-shadow-md"
                               >
                                 <ExternalLink size={12} /> {company.website}
                               </a>
                             )}
-                            
-                            {/* Contact Links */}
+
                             {company.contacts.map((contact, i) => {
-                              const href = contact.type === 'phone' 
-                                ? `tel:${contact.value.replace(/\s+/g, '')}` 
+                              const href = contact.type === 'phone'
+                                ? `tel:${contact.value.replace(/\s+/g, '')}`
                                 : `mailto:${contact.value}`;
-                              
+
                               return (
-                                <a 
-                                  key={i} 
+                                <a
+                                  key={i}
                                   href={href}
-                                  className="flex items-center gap-2 text-xs text-gray-400 hover:text-[#bf9b30] transition-colors cursor-pointer"
+                                  className="flex items-center gap-2 text-xs text-gray-300 hover:text-[#bf9b30] transition-colors cursor-pointer drop-shadow-md"
                                 >
                                   {contact.type === 'phone' ? <Phone size={12} /> : <Mail size={12} />}
-                                  <span className="font-light tracking-wide drop-shadow-sm">{contact.value}</span>
+                                  <span className="font-light tracking-wide">{contact.value}</span>
                                 </a>
                               )
                             })}

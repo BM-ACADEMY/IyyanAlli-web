@@ -1,7 +1,7 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Twitter, ArrowUpRight } from 'lucide-react';
 // Make sure this path matches your actual project structure
-import Logo from "@/assets/img/logo.png"; 
+import Logo from "@/assets/img/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -16,35 +16,35 @@ const Footer = () => {
   return (
     <footer className="bg-[#222] border-t border-white/10 pt-20 pb-10 px-4 font-sans selection:bg-[#bf9b30] selection:text-[#292929]">
       <div className="max-w-7xl mx-auto w-full">
-        
+
         {/* Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8 mb-16">
-          
+
           {/* --- COLUMN 1: LOGO & BRANDING --- */}
           <div className="space-y-6">
             {/* Logo Image */}
             <div className="flex flex-col items-start gap-2">
-              <img 
-                src={Logo} 
-                alt="IyyanAlli Groups Logo" 
-                className="h-16 w-auto object-contain mb-2" 
+              <img
+                src={Logo}
+                alt="IyyanAlli Groups Logo"
+                className="h-16 w-auto object-contain mb-2"
               />
               {/* Fixed: Lightened text color */}
               </div>
-            
+
             {/* Fixed: Lightened text color for better readability */}
             <p className="text-gray-300 text-sm leading-relaxed font-light max-w-sm text-justify">
               Bridging traditional industries with digital opportunities. We empower entrepreneurs and foster economic growth through our integrated business ecosystem.
             </p>
 
             {/* Social Icons */}
-            <div className="flex gap-4 pt-2">
+            {/* <div className="flex gap-4 pt-2">
               {[Facebook, Instagram, Linkedin, Twitter].map((Icon, index) => (
                 <a key={index} href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#bf9b30] hover:border-[#bf9b30] transition-all duration-300">
                   <Icon size={16} />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* --- COLUMN 2: QUICK LINKS (Centered in layout) --- */}
@@ -70,7 +70,7 @@ const Footer = () => {
               <span className="w-8 h-[1px] bg-[#bf9b30]"></span> Contact Us
             </h3>
             <div className="space-y-6">
-              
+
               {/* Phone */}
               <div className="flex items-start gap-4">
                 <Phone size={18} className="text-[#bf9b30] mt-1 shrink-0" />
@@ -111,20 +111,20 @@ const Footer = () => {
           <p className="text-gray-400 text-xs font-light tracking-wide text-center md:text-left">
             &copy; {currentYear} IyyanAlli Groups. All rights reserved.
           </p>
-          
+
           {/* Developer Credit */}
-          <div className="flex items-center gap-1 text-xs text-gray-500">
+          {/* <div className="flex items-center gap-1 text-xs text-gray-500">
             <span>Developed by</span>
-            <a 
-              href="https://bmtechx.in" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://bmtechx.in"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-300 hover:text-[#bf9b30] flex items-center gap-0.5 transition-colors font-medium group"
             >
               BMTechx.in
               <ArrowUpRight size={10} className="opacity-0 group-hover:opacity-100 transition-opacity" />
             </a>
-          </div>
+          </div> */}
         </div>
 
       </div>
