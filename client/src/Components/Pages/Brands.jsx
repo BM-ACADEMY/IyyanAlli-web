@@ -216,7 +216,8 @@ const IyyanAlliPortfolioV6 = () => {
                       <div className="relative z-20 max-w-[85%]">
                         <div className="flex justify-between items-start mb-6">
                           <div>
-                            <h3 className="text-xl lg:text-2xl font-light text-white tracking-wide group-hover:text-[#bf9b30] transition-colors relative drop-shadow-md">
+                            {/* 1. TITLE: Increased to text-2xl (mobile) and text-3xl (desktop) */}
+                            <h3 className="text-2xl lg:text-3xl font-light text-white tracking-wide group-hover:text-[#bf9b30] transition-colors relative drop-shadow-md">
                               {company.name}
                             </h3>
                             <div className="h-[1px] w-12 bg-[#bf9b30] mt-3 mb-3 shadow-sm"></div>
@@ -225,16 +226,19 @@ const IyyanAlliPortfolioV6 = () => {
 
                         <div className="space-y-4">
                           <div className="flex flex-col gap-1">
-                            <p className="text-sm font-medium text-gray-100 drop-shadow-md">
+                            {/* 2. ROLE: Increased to text-lg */}
+                            <p className="text-lg font-medium text-gray-100 drop-shadow-md">
                               {company.role}
                             </p>
-                            {company.meta && <p className="text-xs text-gray-300 uppercase tracking-widest drop-shadow-md">{company.meta}</p>}
+                            {/* 3. META: Increased to text-sm */}
+                            {company.meta && <p className="text-sm text-gray-300 uppercase tracking-widest drop-shadow-md">{company.meta}</p>}
                           </div>
 
                           <ul className="space-y-2">
                             {company.details.map((detail, i) => (
-                              <li key={i} className="text-sm text-gray-200 font-light flex items-start gap-2">
-                                <span className="mt-1.5 w-1 h-1 bg-[#bf9b30] rounded-full shrink-0 shadow-sm"></span>
+                              /* 4. DETAILS: Increased to text-base (16px) */
+                              <li key={i} className="text-base text-gray-200 font-light flex items-start gap-2">
+                                <span className="mt-2 w-1.5 h-1.5 bg-[#bf9b30] rounded-full shrink-0 shadow-sm"></span>
                                 <span className="leading-relaxed drop-shadow-md">{detail}</span>
                               </li>
                             ))}
@@ -247,9 +251,10 @@ const IyyanAlliPortfolioV6 = () => {
                                 href={`https://${company.website}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-xs text-[#bf9b30] hover:text-white transition-colors group/link cursor-pointer drop-shadow-md"
+                                /* 5. LINKS: Increased to text-sm */
+                                className="flex items-center gap-2 text-sm text-[#bf9b30] hover:text-white transition-colors group/link cursor-pointer drop-shadow-md"
                               >
-                                <ExternalLink size={12} /> {company.website}
+                                <ExternalLink size={14} /> {company.website}
                               </a>
                             )}
 
@@ -262,9 +267,10 @@ const IyyanAlliPortfolioV6 = () => {
                                 <a
                                   key={i}
                                   href={href}
-                                  className="flex items-center gap-2 text-xs text-gray-300 hover:text-[#bf9b30] transition-colors cursor-pointer drop-shadow-md"
+                                  /* 5. LINKS: Increased to text-sm */
+                                  className="flex items-center gap-2 text-sm text-gray-300 hover:text-[#bf9b30] transition-colors cursor-pointer drop-shadow-md"
                                 >
-                                  {contact.type === 'phone' ? <Phone size={12} /> : <Mail size={12} />}
+                                  {contact.type === 'phone' ? <Phone size={14} /> : <Mail size={14} />}
                                   <span className="font-light tracking-wide">{contact.value}</span>
                                 </a>
                               )

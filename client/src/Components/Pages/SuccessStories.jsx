@@ -31,7 +31,7 @@ const SuccessStories = () => {
       <div className="max-w-6xl mx-auto">
 
         {/* --- HEADER --- */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,7 +51,7 @@ const SuccessStories = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
           {/* 1. KEY STAT: YEARS */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -69,7 +69,7 @@ const SuccessStories = () => {
           </motion.div>
 
           {/* 2. KEY STAT: PROJECTS */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -88,7 +88,7 @@ const SuccessStories = () => {
           </motion.div>
 
           {/* 3. HERO STORY: ARASI GROWTH (Spans 2 columns on large screens) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -98,22 +98,22 @@ const SuccessStories = () => {
             <div className="absolute top-0 right-0 p-4 opacity-50">
                <TrendingUp size={100} className="text-[#bf9b30]/5" strokeWidth={1} />
             </div>
-            
+
             <div className="relative z-10 h-full flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-2 mb-6">
-                  <span className="px-3 py-1 bg-[#bf9b30] text-[#292929] text-xs font-bold uppercase tracking-wider rounded-full">
+                  <span className="px-3 py-1 bg-[#bf9b30] text-[#292929] text-md font-bold uppercase tracking-wider rounded-full">
                     The Comeback
                   </span>
                 </div>
                 <h3 className="text-2xl lg:text-3xl font-light text-white mb-4 leading-snug">
                   From <span className="text-[#bf9b30]">₹600</span> Investment to a <span className="text-[#bf9b30]">₹45 Lakh</span> Valuation
                 </h3>
-                <p className="text-gray-400 font-light leading-relaxed text-sm lg:text-base text-justify">
+                <p className="text-gray-400 font-light leading-relaxed text-md lg:text-base text-justify">
                   In 2018, defying a major financial setback, we launched <strong>Arasi Soap Works</strong> with a humble capital of just ₹600. Through the challenging COVID era, we scaled operations relentlessly. Today, it stands as a testament to resilience, offering 35+ products and serving thousands.
                 </p>
               </div>
-              
+
               <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
                  <div>
                    <span className="block text-3xl font-normal text-white"><Counter value={35} suffix="+" /></span>
@@ -127,7 +127,7 @@ const SuccessStories = () => {
           </motion.div>
 
           {/* 4. KEY STAT: PRODUCTS (Stacked) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -140,7 +140,7 @@ const SuccessStories = () => {
                </div> */}
                <div>
                  <h4 className="text-xl text-white font-light mb-2">Community Impact</h4>
-                 <p className="text-sm text-gray-400 leading-relaxed text-justify">
+                 <p className="text-md text-gray-400 leading-relaxed text-justify">
                    Beyond business, we are committed to Pondicherry's growth. Through <strong>Huntsworld</strong>, we are digitizing local businesses, bridging the gap between traditional merchants and the modern digital economy.
                  </p>
                </div>
@@ -148,7 +148,7 @@ const SuccessStories = () => {
           </motion.div>
 
           {/* 5. ACHIEVEMENT: TECH */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -158,7 +158,7 @@ const SuccessStories = () => {
              <div className="flex justify-between items-start">
                <div>
                   <h4 className="text-xl text-white font-light mb-2">Digital Ecosystem</h4>
-                  <p className="text-sm text-gray-400 leading-relaxed max-w-md text-justify">
+                  <p className="text-md text-gray-400 leading-relaxed max-w-md text-justify">
                     Successfully launched <strong>Huntsworld Properties</strong> & B2B platforms, creating a unified ecosystem for Real Estate, Chemicals, and Retail.
                   </p>
                </div>

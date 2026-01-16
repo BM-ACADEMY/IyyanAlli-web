@@ -84,8 +84,8 @@ const FounderSection = () => {
                     Our Founder
                   </h4>
                   <h1 className="text-4xl md:text-5xl font-serif text-slate-900 leading-[1.1]">
-                    L. Nandha Kumaran <br />
-                    <span className="text-2xl md:text-3xl text-slate-400 font-light block mt-2">S/O R. Lakshminarayanan</span>
+                    <span className="italic">L. Nandha Kumaran</span> <br />
+                    <span className="text-2xl md:text-3xl text-slate-400 font-light block mt-2 not-italic">S/O R. Lakshminarayanan</span>
                   </h1>
                 </div>
                 {/* Quote Icon */}
@@ -93,26 +93,27 @@ const FounderSection = () => {
               </div>
 
               {/* Body Text */}
-              <div className="space-y-6 text-slate-600 leading-relaxed text-lg font-light text-justify">
+              {/* CHANGED: text-slate-600 -> text-slate-700, font-light -> font-medium */}
+              <div className="space-y-6 text-slate-700 leading-relaxed text-lg font-medium text-justify">
 
                 {/* Paragraph 1: Intro & Scope */}
                 <p>
-                  <strong className="text-slate-900 font-medium">L. Nandha Kumaran</strong> is the driving force behind <span className="text-[#bf9b30] font-medium">Iyyanalli Groups</span>, a Pondicherry-based powerhouse uniting <span className="text-slate-900 underline decoration-[#bf9b30]/50 underline-offset-4">real estate, manufacturing, chemicals, and digital platforms</span>.
+                  <strong className="text-slate-900 italic font-bold">As the </strong> Founder & CEO of <span className="text-[#bf9b30] italic font-bold"> Iyyanalli Groups</span>, a Pondicherry-based powerhouse uniting <span className="text-slate-900 underline decoration-[#bf9b30]/50 underline-offset-4">real estate, manufacturing, chemicals, and digital platforms</span>.
                 </p>
 
                 {/* Paragraph 2: Father's Legacy */}
                 <p>
-                  Son of pioneering entrepreneur <strong className="text-slate-900 font-medium">Mr. R. LakshmiNarayanan</strong>—who laid the groundwork with <em>Thirukumaran Real Estate (2004), TK Banners, and Thirukumaran Travels</em>—Nandha Kumaran stepped into leadership following his father's passing in 2024.
+                  Son of pioneering entrepreneur <strong className="text-slate-900 italic font-bold">Mr. R. LakshmiNarayanan</strong>—who laid the groundwork with <span className="italic text-slate-900">Thirukumaran Real Estate (2004), TK Banners, and Thirukumaran Travels</span>—Nandha Kumaran stepped into leadership following his father's passing in 2024.
                 </p>
 
                 {/* Paragraph 3: Consolidation & Vision */}
                 <p>
-                  Under his vision, all ventures—<span className="text-slate-800 font-normal">Thirukumaran Real Estate, Arasi Soap Works, NK Chemicals, Huntsworld, and Huntsworld Properties</span>—thrive as Iyyanalli Groups, blending tradition with innovation to empower Pondicherry's businesses.
+                  Under his vision, all ventures—<span className="text-slate-900 italic">Thirukumaran Real Estate, Arasi Soap Works, NK Chemicals, Huntsworld, and Huntsworld Properties</span>—thrive as <span className="italic text-[#bf9b30] font-bold">Iyyanalli Groups</span>, blending tradition with innovation to empower Pondicherry's businesses.
                 </p>
 
                 {/* Pull Quote */}
                 <div className="border-l-2 border-[#bf9b30] pl-6 py-1 my-6">
-                  <p className="text-xl text-slate-800 italic font-serif">
+                  <p className="text-xl text-slate-800 italic font-serif font-normal">
                     "We don't just build businesses; we build ecosystems. Bridging Pondicherry's traditional industries with modern digital opportunities is not just our job—it is our legacy."
                   </p>
                 </div>
