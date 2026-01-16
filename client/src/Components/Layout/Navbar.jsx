@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, ArrowRight } from "lucide-react";
-import Logo from "@/assets/img/logo.png"; // Ensure this path is correct in your project
+import { Menu, X } from "lucide-react";
+import Logo from "@/assets/img/logo.png"; // Ensure this path is correct
 
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -16,12 +16,11 @@ const Navbar = () => {
             <motion.img
               src={Logo}
               alt="Logo"
-              // Adjusted size: h-10 (40px) is standard for navbars
-              className="h-14 w-auto object-contain" 
+              className="h-14 w-auto object-contain"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
             />
-            <span className="text-[#eb1c2e] font-bold text-xl tracking-tighter group-hover:text-gray-300 transition-colors">
+            <span className="text-[#bf9b30] font-bold text-xl tracking-tighter group-hover:text-gray-300 transition-colors">
               IyyanAlli Groups
             </span>
           </a>
@@ -55,7 +54,7 @@ const Navbar = () => {
   );
 };
 
-// --- 3D Flip Link Animation ---
+// --- 3D Flip Link Animation (Fixed) ---
 const FlipLink = ({ children, href }) => {
   return (
     <motion.a
@@ -72,7 +71,7 @@ const FlipLink = ({ children, href }) => {
             hovered: { y: "-100%" },
           }}
           transition={{ duration: 0.25, ease: "easeInOut" }}
-          className="inline-block"
+          className="block" // Changed to block for better height calculation
         >
           {children}
         </motion.span>
@@ -84,7 +83,8 @@ const FlipLink = ({ children, href }) => {
             hovered: { y: 0 },
           }}
           transition={{ duration: 0.25, ease: "easeInOut" }}
-          className="absolute left-0 top-0 inline-block text-[#f7ce56] font-bold"
+          // Added w-full to ensure it matches parent width exactly
+          className="absolute left-0 top-0 block w-full text-[#f7ce56] font-bold"
         >
           {children}
         </motion.span>
@@ -93,7 +93,7 @@ const FlipLink = ({ children, href }) => {
   );
 };
 
-// --- Mobile: Off-Canvas Menu ---
+// --- Mobile: Off-Canvas Menu (Fixed Closing) ---
 const MobileMenu = ({ onClose }) => {
   return (
     <motion.div
@@ -113,7 +113,6 @@ const MobileMenu = ({ onClose }) => {
       >
         <div className="flex justify-between items-center mb-8">
           <div className="flex items-center gap-2">
-            {/* You can also put the logo here in the mobile menu if desired */}
             <img src={Logo} alt="Logo" className="h-8 w-auto" />
             <span className="text-white font-bold text-md">IyyanAlli Groups</span>
           </div>
@@ -123,27 +122,23 @@ const MobileMenu = ({ onClose }) => {
         </div>
 
         <div className="flex flex-col gap-6 text-lg">
-          
-          <MobileLink href="#home">Home</MobileLink>
-            <MobileLink href="#founder">Founder</MobileLink>
-            <MobileLink href="#about">About</MobileLink>
-            <MobileLink href="#brands">Brands</MobileLink>
-            <MobileLink href="#contact">Contact</MobileLink>
+          {/* Passed onClose to every link */}
+          <MobileLink href="#home" onClick={onClose}>Home</MobileLink>
+          <MobileLink href="#founder" onClick={onClose}>Founder</MobileLink>
+          <MobileLink href="#about" onClick={onClose}>About</MobileLink>
+          <MobileLink href="#brands" onClick={onClose}>Brands</MobileLink>
+          <MobileLink href="#contact" onClick={onClose}>Contact</MobileLink>
         </div>
-
-        {/* <div className="mt-auto">
-          <button className="w-full bg-indigo-600 text-white py-3 rounded-xl font-medium flex items-center justify-center gap-2 active:scale-95 transition-transform">
-            Sign In <ArrowRight size={18} />
-          </button>
-        </div> */}
       </motion.div>
     </motion.div>
   );
 };
 
-const MobileLink = ({ children, href }) => (
+// Updated MobileLink to accept onClick
+const MobileLink = ({ children, href, onClick }) => (
   <a 
     href={href} 
+    onClick={onClick}
     className="text-gray-400 hover:text-white font-medium transition-colors hover:translate-x-2 block duration-300"
   >
     {children}
