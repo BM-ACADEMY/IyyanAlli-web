@@ -96,7 +96,10 @@ const Footer = () => {
                 <MapPin size={18} className="text-[#bf9b30] mt-1 shrink-0" />
                 <div>
                   <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Headquarters</p>
-                  <p className="text-gray-200 text-sm">Pondicherry, India</p>
+                  <p className="text-gray-200 text-sm">Arasi soap works,
+                      2,East coast road,
+                      Bahour,
+                      Kattukuppam,Puducherry-607402</p>
                 </div>
               </div>
 
