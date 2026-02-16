@@ -3,8 +3,7 @@ require("dotenv").config();
 
 // IyyanAlli Groups Email Transporter
 const iyyanAlliTransporter = nodemailer.createTransport({
-  // host: "smtp.zoho.com",
-  host: "smtp.gmail.com",
+  host: "smtp.zoho.com",
   port: 465,
   secure: true,
   auth: {
