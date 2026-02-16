@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Logo from "@/assets/img/logo.png"; // Ensure this path is correct
+import InvestorModal from "./InvestorModal"; // Imported the Modal
 
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isInvestorModalOpen, setIsInvestorModalOpen] = useState(false); // Added State
 
   return (
     <>
@@ -31,6 +33,8 @@ const Navbar = () => {
             <FlipLink href="#founder">Founder</FlipLink>
             <FlipLink href="#about">About</FlipLink>
             <FlipLink href="#brands">Brands</FlipLink>
+            {/* Added Investor Link with onClick handler */}
+            <FlipLink onClick={() => setIsInvestorModalOpen(true)}>Investor</FlipLink>
             <FlipLink href="#contact">Contact</FlipLink>
           </div>
 
@@ -47,21 +51,36 @@ const Navbar = () => {
       {/* --- Mobile Off-Canvas Menu --- */}
       <AnimatePresence>
         {isMobileOpen && (
-          <MobileMenu onClose={() => setIsMobileOpen(false)} />
+          <MobileMenu 
+            onClose={() => setIsMobileOpen(false)} 
+            onOpenInvestor={() => setIsInvestorModalOpen(true)} // Pass opener to mobile menu
+          />
         )}
       </AnimatePresence>
+
+      {/* --- Investor Modal --- */}
+      <InvestorModal
+        isOpen={isInvestorModalOpen}
+        onClose={() => setIsInvestorModalOpen(false)}
+      />
     </>
   );
 };
 
-// --- 3D Flip Link Animation (Fixed) ---
-const FlipLink = ({ children, href }) => {
+// --- 3D Flip Link Animation (Updated to support onClick) ---
+const FlipLink = ({ children, href, onClick }) => {
   return (
     <motion.a
       initial="initial"
       whileHover="hovered"
-      href={href}
-      className="relative block overflow-hidden whitespace-nowrap text-gray-300 font-medium"
+      href={href || "#"}
+      onClick={(e) => {
+        if (onClick) {
+            e.preventDefault();
+            onClick();
+        }
+      }}
+      className="relative block overflow-hidden whitespace-nowrap text-gray-300 font-medium cursor-pointer"
     >
       <div className="relative">
         {/* Original Text - Slides Up */}
@@ -71,7 +90,7 @@ const FlipLink = ({ children, href }) => {
             hovered: { y: "-100%" },
           }}
           transition={{ duration: 0.25, ease: "easeInOut" }}
-          className="block" // Changed to block for better height calculation
+          className="block"
         >
           {children}
         </motion.span>
@@ -83,7 +102,6 @@ const FlipLink = ({ children, href }) => {
             hovered: { y: 0 },
           }}
           transition={{ duration: 0.25, ease: "easeInOut" }}
-          // Added w-full to ensure it matches parent width exactly
           className="absolute left-0 top-0 block w-full text-[#f7ce56] font-bold"
         >
           {children}
@@ -93,8 +111,8 @@ const FlipLink = ({ children, href }) => {
   );
 };
 
-// --- Mobile: Off-Canvas Menu (Fixed Closing) ---
-const MobileMenu = ({ onClose }) => {
+// --- Mobile: Off-Canvas Menu (Updated with Investor Link) ---
+const MobileMenu = ({ onClose, onOpenInvestor }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -122,11 +140,20 @@ const MobileMenu = ({ onClose }) => {
         </div>
 
         <div className="flex flex-col gap-6 text-lg">
-          {/* Passed onClose to every link */}
           <MobileLink href="#home" onClick={onClose}>Home</MobileLink>
           <MobileLink href="#founder" onClick={onClose}>Founder</MobileLink>
           <MobileLink href="#about" onClick={onClose}>About</MobileLink>
           <MobileLink href="#brands" onClick={onClose}>Brands</MobileLink>
+          {/* Added Investor Link for Mobile */}
+          <MobileLink 
+            href="#" 
+            onClick={() => {
+                onClose();
+                onOpenInvestor();
+            }}
+          >
+            Investor
+          </MobileLink>
           <MobileLink href="#contact" onClick={onClose}>Contact</MobileLink>
         </div>
       </motion.div>
