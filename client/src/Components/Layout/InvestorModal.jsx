@@ -9,6 +9,7 @@ const InvestorModal = ({ isOpen, onClose }) => {
     phone: "",
     email: "",
     investmentType: "",
+    description: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState({ type: "", text: "" });
@@ -43,6 +44,7 @@ const InvestorModal = ({ isOpen, onClose }) => {
           phone: "",
           email: "",
           investmentType: "",
+          description: "",
         });
         setTimeout(() => {
           onClose();
@@ -168,7 +170,7 @@ const InvestorModal = ({ isOpen, onClose }) => {
               className="block text-sm font-medium text-gray-300 mb-2"
             >
               Which business would you like to invest in?{" "}
-              <span className="text-red-500">*</span>
+              <span className="text-gray-500 text-xs">(Optional)</span>
             </label>
             <input
               type="text"
@@ -176,9 +178,28 @@ const InvestorModal = ({ isOpen, onClose }) => {
               name="investmentType"
               value={formData.investmentType}
               onChange={handleChange}
-              required
               className="w-full px-4 py-2 bg-[#333] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#bf9b30] transition-colors"
               placeholder="Enter the business name"
+            />
+          </div>
+
+          {/* Description */}
+          <div>
+            <label
+              htmlFor="description"
+              className="block text-sm font-medium text-gray-300 mb-2"
+            >
+              Description{" "}
+              <span className="text-gray-500 text-xs">(Optional)</span>
+            </label>
+            <textarea
+              id="description"
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              rows="4"
+              className="w-full px-4 py-2 bg-[#333] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#bf9b30] transition-colors resize-none"
+              placeholder="Tell us more about your investment interests..."
             />
           </div>
 

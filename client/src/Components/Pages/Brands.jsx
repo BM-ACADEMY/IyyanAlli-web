@@ -70,7 +70,7 @@ const IyyanAlliPortfolioV6 = () => {
     {
       id: 5,
       name: "Huntsworld (B2B)",
-      meta: "Comming Soon",
+      meta: "Since 2026",
       role: "Business Listing Ecosystem",
       details: ["B2B Connections", "Monetization Features"],
       contacts: [

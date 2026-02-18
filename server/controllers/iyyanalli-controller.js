@@ -8,12 +8,10 @@ exports.sendEnquiryMail = async (req, res) => {
 
     // Validation
     if (!name || !email || !phone) {
-      return res
-        .status(400)
-        .json({
-          success: false,
-          message: "Name, Email, and Phone are required.",
-        });
+      return res.status(400).json({
+        success: false,
+        message: "Name, Email, and Phone are required.",
+      });
     }
 
     const mailData = iyyanAlliEmail.contactEmail({
@@ -54,13 +52,14 @@ exports.sendEnquiryMail = async (req, res) => {
 // Investor Inquiry Email
 exports.sendInvestorInquiry = async (req, res) => {
   try {
-    const { name, business, phone, email, investmentType } = req.body;
+    const { name, business, phone, email, investmentType, description } =
+      req.body;
 
     // Validation
-    if (!name || !email || !phone || !investmentType) {
+    if (!name || !email || !phone) {
       return res.status(400).json({
         success: false,
-        message: "Name, Email, Phone, and Investment Type are required.",
+        message: "Name, Email, and Phone are required.",
       });
     }
 
@@ -70,6 +69,7 @@ exports.sendInvestorInquiry = async (req, res) => {
       phone,
       email,
       investmentType,
+      description,
     });
 
     // Send to nandhu@huntsworld.com

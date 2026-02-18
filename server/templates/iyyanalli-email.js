@@ -61,9 +61,10 @@ exports.investorEmail = function ({
   phone,
   email,
   investmentType,
+  description,
 }) {
   return {
-    adminSubject: `💼 New Investor Inquiry: ${name} - ${investmentType}`,
+    adminSubject: `💼 New Investor Inquiry: ${name} - ${investmentType || "General Inquiry"}`,
     userSubject: `Thank you for your investment inquiry - IyyanAlli Groups`,
 
     // --- ADMIN EMAIL ---
@@ -83,8 +84,16 @@ exports.investorEmail = function ({
             </table>
             <div style="background-color: #f9fafc; padding: 20px; border-left: 4px solid ${mainColor}; margin-top: 25px;">
               <p style="margin: 0; color: #333; font-weight: bold;">Investment Interest:</p>
-              <p style="margin: 10px 0 0 0; color: #666; font-size: 18px;">${investmentType}</p>
+              <p style="margin: 10px 0 0 0; color: #666; font-size: 18px;">${investmentType || "Not Specified"}</p>
             </div>
+            ${
+              description
+                ? `<div style="background-color: #f9fafc; padding: 20px; border-left: 4px solid ${mainColor}; margin-top: 25px;">
+              <p style="margin: 0; color: #333; font-weight: bold;">Description:</p>
+              <p style="margin: 10px 0 0 0; color: #666; font-size: 16px;">${description}</p>
+            </div>`
+                : ""
+            }
             <p style="text-align: right; color: #999; font-size: 12px; margin-top: 30px;">Received: ${date}</p>
           </div>
         </div>
